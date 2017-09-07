@@ -20,6 +20,10 @@ html {
   font-size: 16px; }
 
 /* ----- fin reset -----------------------------------------------------------*/
+.title {
+  font-weight: lighter;
+  font-family: Open Sans; }
+
 .link-1,
 .link-2,
 .link-3 {
