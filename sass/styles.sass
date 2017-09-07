@@ -1,0 +1,692 @@
+*
+	border: 0 
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+*
+	// outline: 1px solid lightsteelblue
+
+ul, li
+	list-style: none
+
+a:link, a:visited, a:hover, a:active
+	text-decoration: none
+
+html, body
+	width: 100% 
+	height: 100% 
+	font-family: Montserrat, sans-serif
+
+html
+	font-size: 16px
+
+/* ----- fin reset -----------------------------------------------------------*/
+
+
+
+
+@mixin flex
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+
+
+
+$altura-link: 60px
+$color-panel: #00887a
+$color-panel-hover: lighten(#00887a, 20%)
+$color-borde: 1px solid rgba(255,255,255, .3)
+
+
+h1
+	// font-weight: lighter
+
+
+
+.link-1,
+.link-2,
+.link-3
+	
+	font-size: 15px
+
+
+a 
+	color: #fff
+
+// ******************************
+
+
+
+
+
+
+.container
+
+	width: 100%
+	max-width: 980px
+	margin-left: auto
+	margin-right: auto
+
+
+
+
+
+
+
+// ******************************
+// ***** CARRUSEL ***************
+
+.container-carrusel
+	
+	width: 100%
+	max-width: 980px
+	height: 45vmin
+	
+	position: absolute
+	top: 21vmin
+	margin-top: 60px
+
+	// Configuración perfecta.
+	// El método shorthand crea derrapes.
+	// Necesita el .0s para funcionar.
+	transition-property: margin, top
+	transition-duration: .3s, .0s
+
+	z-index: -1 // Para que no moleste
+
+
+
+#carrusel1,
+#carrusel2
+
+	width: 100%
+	height: 45vmin
+
+	background-position: center
+	background-size: cover
+
+	position: absolute
+
+
+
+
+$fadeTime: 3s
+@keyframes aparecer 
+
+	0% 
+		opacity: 0
+	100% 
+		opacity: 100%
+
+
+@keyframes desaparecer 
+
+	0% 
+		opacity: 100%
+	100% 
+		opacity: 0
+
+
+
+
+.aparecer
+	animation-name: aparecer
+	animation-duration: $fadeTime
+
+
+.desaparecer
+	animation-name: desaparecer
+	animation-duration: $fadeTime
+
+
+
+//********************************
+
+
+
+.header
+
+	@include flex
+
+	// background-color: #fff
+
+	height: 21vmin
+
+	position: relative
+
+
+
+.title
+
+	font-size: 10vmin
+	transition: font-size, .3s
+
+
+
+
+.container-2
+
+	position: relative
+
+	overflow: hidden
+
+
+
+
+.button-large
+
+	@include flex
+	justify-content: space-between
+	
+	color: #fff
+	background-color: $color-panel
+	transition: background-color, .2s
+	border-bottom: $color-borde
+	box-shadow: 3px 3px 5px #666
+
+	padding: 0 20px
+
+	width: 100%
+	height: 60px
+
+	cursor: pointer
+
+	transition-property: height
+	transition-duration: .3s
+
+	& p, i
+
+		transition-property: margin
+		transition-duration: .3s
+
+	&:hover
+
+		background-color: $color-panel-hover
+		transition: background-color, .1s
+
+	& i
+
+		font-size: 18px
+
+
+
+
+.button-small
+
+	@include flex
+		
+	color: transparent
+	background-color: transparent
+		
+	font-size: 0
+
+	padding: 0
+
+	box-shadow: 0 2px 5px -2px #000
+
+	transition: all .5s
+		
+	position: absolute
+	top: 110%
+	left: 80%
+
+
+
+
+
+
+
+
+.nav
+
+	background-color: $color-panel
+
+	width: 80%
+	height: 100vh
+	
+	position: absolute
+	top: 60px
+	left: -100%
+
+	box-shadow: 3px 3px 5px #666
+	
+	// Para mostrar
+	// el scroll
+	overflow: auto
+
+
+
+
+
+
+.li-1
+
+	overflow: hidden
+
+
+
+
+.icono-proyectos::after
+
+	font-family: FontAwesome
+	font-size: 20px
+	content: "\f0d7"
+	padding-left: 10px
+
+
+
+
+
+
+
+
+.icono-nava::after
+
+	font-family: FontAwesome
+	font-size: 20px
+	content: "\f0d7"
+	padding-left: 10px
+
+
+
+
+
+.link-1
+
+	@include flex
+	justify-content: flex-start
+
+	background-color: $color-panel
+	transition: background-color, .2s
+	border-bottom: $color-borde
+	
+	//Para tapar ul-2
+	position: relative
+	z-index: 1
+	
+	height: $altura-link
+
+	&:hover
+
+		background-color: $color-panel-hover
+
+	& i
+
+		padding: 0 20px
+
+
+
+
+
+
+
+
+
+.link-2
+
+	@include flex
+	
+	background-color: $color-panel
+	transition: background-color, .2s
+	border-bottom: $color-borde
+
+	width: 100%
+	height: $altura-link
+
+	position: relative
+
+	&:hover
+
+		background-color: $color-panel-hover
+
+
+
+
+
+
+
+
+
+.ul-3
+
+	height: 0
+
+
+
+
+
+
+.link-3
+
+	@include flex
+	
+	background-color: $color-panel
+	transition: background-color, .2s
+	border-bottom: $color-borde
+
+	width: 100%
+	height: $altura-link
+
+	&:hover
+
+		background-color: $color-panel-hover
+
+
+
+
+
+
+
+
+
+
+section
+
+	margin-top: 45vmin
+	padding: 10px 5px 0 10px
+
+	& p
+
+		font-size: 14px
+
+		text-align: justify
+
+
+
+
+
+
+@media(max-width: 210px)
+
+	a[class*="link"]
+
+		font-size: 13px
+
+	.link-1 > i
+
+		padding-left: 10px
+		padding-right: 10px
+
+
+
+@media(min-width: 250px)
+
+	.title
+
+		font-size: 32px
+
+
+	section 
+
+		padding: 20px 10px 0 10px
+
+
+		& p
+
+			font-size: 16px
+
+
+
+
+
+
+@media(max-width: 480px)
+
+
+	.sombra-bottom
+
+		box-shadow: -2px 3px 5px darken(#00887a, 10%)
+
+
+
+
+
+@media(min-width: 480px) and (max-width: 650px)
+
+
+	.link-1
+
+		flex-wrap: wrap
+
+
+	.link-1,
+	.link-2,
+	.link-3
+
+		font-size: 12px
+
+
+
+
+	.li-1 > a
+
+		display: flex
+		flex-wrap: wrap
+
+		& i
+
+			width: 100%
+			padding: 0
+			text-align: center
+
+
+
+
+
+@media(min-width: 480px)
+
+
+
+	.container-carrusel
+
+		top: 100px
+		margin-top: 0
+
+
+
+
+	.header
+
+		height: 100px
+
+
+
+
+
+	.button-large
+		
+		// Para ocultar la línea verde
+		border-bottom: 1px solid #fff
+		height: 0
+
+		& p, i
+
+			margin-top: -80px
+
+
+
+
+
+
+	.button-small
+
+		color: #fff
+		background-color: $color-panel
+	
+		font-size: 16px
+		font-weight: bold
+
+		padding: 5px 10px
+
+		border-radius: 2px
+
+		cursor: pointer
+
+		top: 35%
+		left: 80%
+
+		& i
+
+			padding-left: 10px
+
+		&:hover
+
+			background-color: $color-panel-hover
+			transition: none
+		&:active
+			transform: scale(.95, .95)
+
+
+
+
+
+	.nav
+
+		width: 100%
+		height: $altura-link
+
+		top: -60px
+		
+		// Para evitar el 
+		// scroll en la barra
+		// de navegación
+		overflow: visible
+
+		box-shadow: none
+
+
+
+
+
+	.ul-1
+
+		@include flex
+		justify-content: space-around
+
+
+
+
+	.li-1
+
+		width: 100%
+
+		overflow: visible
+
+		position: relative
+
+
+
+
+	.link-1
+
+		@include flex
+
+		width: 100%
+
+		border-right: $color-borde
+
+		& i
+
+			padding-left: 0
+			padding-right: 10px
+
+
+
+
+
+
+
+
+	.ul-2
+		
+		width: 100%
+		height: 0px
+
+		position: absolute
+		top: -240px
+		transition: top, .3s
+
+
+
+
+	.li-1:hover .ul-2
+
+		top: 60px
+
+
+
+
+
+	.li-2
+
+		position: relative
+
+
+
+
+
+	.icono-nava::after
+
+		font-family: FontAwesome
+		font-size: 20px
+		content: "\f0da"
+		padding-left: 10px
+
+
+
+
+
+
+	.ul-3
+
+		width: 100%
+		height: 180px
+
+		position: absolute
+
+		top: 0
+		left: 100%
+		transition: top, .3s
+
+		overflow: hidden
+
+
+
+
+	.link-3
+
+		text-align: center
+
+
+
+
+	.auxiliar
+
+		background-color: red
+		
+		width: 100%
+
+		position: absolute
+		top: -180px
+		transition: top, .3s
+
+
+
+
+
+	.li-2:hover .auxiliar
+
+		top: 0
+
+
+
+
+
+
+	section
+
+		column-count: 3
+		column-gap: 20px
