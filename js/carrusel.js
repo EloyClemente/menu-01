@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', fondo1);
 
 
 
-var delay = 20000; // Tiempo entre imágenes
+var delay = 10000; // Tiempo entre imágenes
 
 var carrusel1 = document.getElementById('carrusel1');
 var carrusel2 = document.getElementById('carrusel2');
